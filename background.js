@@ -6,8 +6,6 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 	chrome.tabs.sendMessage(tab.id, {command: "print_storage"}, function(domain) {
 		if (domain) {
 			// 2) delete cookies
-			console.log(domain);
-			lol = domain;
 			if (domain.startsWith("www.")) {
 				// remove "www." from domain
 				domain = domain.substring(4);
